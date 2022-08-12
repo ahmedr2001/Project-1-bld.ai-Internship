@@ -137,11 +137,6 @@ header {
         box-shadow: 0 3px 7px  #ccc;
     }    
 }
-/* 
-section {
-    position: ;
-
-} */
 
  div.gallery {
     
@@ -166,10 +161,6 @@ div .desc > p {
     font-weight:normal;
     font-size: 11px;
 }
-
-/** {
-    box-sizing: border-box;
-}*/
 
 .responsive {
     padding: 0 0px;
