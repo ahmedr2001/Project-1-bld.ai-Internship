@@ -3,7 +3,6 @@
     font-size: smaller;
     text-align: center;
     padding-bottom: 30px;
-    
     box-shadow: 0 6px 5px -4px #ccc;
 }
 
@@ -27,6 +26,7 @@ nav span {
     height: 120%;
     border: 1px solid black;
     border-radius: 1000px; 
+    text-indent: 20px;
 }
 
 .submit {
@@ -138,7 +138,7 @@ header {
     }    
 }
 
- div.gallery {
+div.gallery {
     
 }
 
@@ -148,7 +148,9 @@ div.gallery img {
     height: auto;
 }
 
-div.desc {
+div.desc .title {
+    width: 90%;
+    color: black;
     padding: 0%;
     text-align: center;
     text-align: left;
@@ -156,7 +158,7 @@ div.desc {
     font-size: 15px;
 }
 
-div .desc > p {
+div .desc > p, .brackets {
     color: #555;
     font-weight:normal;
     font-size: 11px;
@@ -238,12 +240,12 @@ section article p {
     color: #e59819;
 }
 
-.desc > p + p + p {
+.desc > p + p + p + p {
     font-weight: bold;
     font-size: 14px;
 }
 
-.desc > p + p + p del {
+.desc > p + p + p + p del {
     font-weight: normal;
     color: #777;
 }

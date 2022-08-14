@@ -7,13 +7,13 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <nav class="nav" style="height: 35px;">
+        <nav class="nav" style="height: 35px; position: sticky; top:0px; z-index: 10; background-color: white;">
             <span id="bar"><i class="fa fa-bars fa-2x"></i></span>
             <img class="logo" style="max-height: 100%; display: inline;" src="images/udemylogo.png" alt="Udemy Logo">
             <span>Categories</span>
-            <form id="form" style="display: inline;" action="#" method="post">
+            <form onkeyup="searchFunction(event)" id="form" style="display: inline;" action="#" method="post">
                 <span id="search"><i style="position: absolute; padding-top: 25px; padding-left: 15px;" class="fa fa-search"></i></span>
-                <input class="input-field" style="width: 50%;" type="text" placeholder="      Search for anything">
+                <input id="input-field" class="input-field" style="width: 50%;" type="text" placeholder="Search for anything">
                 <button class="submit" type="submit">Search</button>
             </form>
             <span>Udemy Business</span>
@@ -38,7 +38,7 @@
             <span><a href="#">Data Science</a></span>
             <span><a href="#">AWS Certification</a></span>
             <span><a href="#">Drawing</a></span>
-            <article>
+            <article id="article">
                 <h2>Expand your career opportunities with Python</h2>
                 <p>Take one of Udemy's range of Python courses and learn how to code using this incredibly useful language.
                     Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. 
@@ -46,99 +46,73 @@
                 </p>
                 <button id="python" type="button">Explore Python</button>
                 <br>
-                <div class="responsive">
-                    <div class="gallery">
-                        <img src="images/py1.png" alt="Python1" width="480" height="320">
-                        <div class="desc">Learn Python: The Complete Python Programming Course
-                            <p>Avinash Jain, The Codex</p>
-                            <p>
-                                <span class="orange">4.4</span>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star"></i>
-                                <span class="brackets">(2,845)</span>
-                            </p>
-                            <p><strong>E&#xa3;199.99</strong> <del>E&#xa3;679.99</del></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="responsive">
-                    <div class="gallery">
-                        <img src="images/py2.png" alt="Python2" width="480" height="320">
-                        <div class="desc">Learning Python for Data Analysis and Visualization
-                            <p>Jose Portilla</p>
-                            <p>
-                                <span class="orange">4.4</span>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star"></i>
-                                <span class="brackets">(17,956)</span>
-                            </p>
-                            <p>E&#xa3;269.99 <del>E&#xa3;1,599.99</del></p>
-                            <span style="color: black; background-color: #eceb98; padding: 5px 7px 5px 7px; font-size: 10px; font-weight: bold;">Bestseller</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="responsive">
-                    <div class="gallery">
-                        <img src="images/py3.png" alt="Python3" width="480" height="320">
-                        <div class="desc">Python for Beginners - Learn Programming from scratch
-                            <p>Edwin Diaz, Coding Faculty Solutions</p>
-                            <p>
-                                <span class="orange">4.4</span>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star"></i>
-                                <span class="brackets">(1,734)</span>
-                            </p>
-                            <p>E&#xa3;199.99 <del>E&#xa3;679.99</del></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="responsive">
-                    <div class="gallery">
-                        <img src="images/py4.png" alt="Python4" width="480" height="320">
-                        <div class="desc">Learn Python: Python for Beginners
-                            <p>Abrar Hussain</p>
-                            <p>
-                                <span class="orange">4.2</span>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star"></i>
-                                <span class="brackets">(2,759)</span>
-                            </p>
-                            <p>E&#xa3;199.99 <del>E&#xa3;319.99</del></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="responsive">
-                    <div class="gallery">
-                        <img src="images/py5.png" alt="Python5" width="480" height="320">
-                        <div class="desc">Python Beyond the Basics - Object-Oriented Programming
-                            <p>Infinite Skills</p>
-                            <p>
-                                <span class="orange">4.4</span>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star checked"></i>
-                                <i class="fa fa-star"></i>
-                                <span class="brackets">(2,927)</span>
-                            </p>
-                            <p>E&#xa3;229.99 <del>E&#xa3;519.99</del></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
             </article>
         </section>
     </body>
+    <script>
+        async function fetchCourses(){
+            let courses = await fetch("http://localhost:3000/courses")
+                    .then(res => res.json())
+                    .then(json => json)
+                    .catch (err => console.log(err));
+            console.log(courses);
+            let article = document.querySelector('#article');
+            for(let i=0;i<5;i++){
+                let responsive = document.createElement('div');
+                responsive.className = 'responsive';
+                let gallery = document.createElement('div');
+                gallery.className = 'gallery';
+                let img = document.createElement('img');
+                img.src = courses[i].image;
+                img.alt = `Python${i+1}`;
+                img.width = 480;
+                img.height = 320;
+                let div = document.createElement('div');
+                div.className = 'desc';
+                div.innerHTML += `<p class="title">${courses[i].title}</p>`;
+                div.innerHTML += `<p>${courses[i].author}<p>`;
+                div.innerHTML += `<p>
+                                <span class="orange">${courses[i].rating}</span>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star checked"></i>
+                                <i class="fa fa-star"></i>
+                                <span class="brackets">(${courses[i].reviews})</span>
+                            </p>`;
+                div.innerHTML += `<p>E&#xa3;${courses[i].price} <del>E&#xa3;${courses[i].previous}</del></p>`;
+                gallery.appendChild(img);
+                gallery.appendChild(div);
+                responsive.appendChild(gallery);
+                article.appendChild(responsive);
+            }
+            let clearfix = document.createElement('div');
+            clearfix.className = 'clearfix';
+            article.appendChild(clearfix);
+        }
+        window.addEventListener('load', fetchCourses);
+
+        let form = document.querySelector('#form');
+
+        form.addEventListener('focus', (event) => {
+            event.preventDefault();
+        });
+
+        function searchFunction(event){
+            event.preventDefault();
+            let inputField = form.elements['input-field'];
+            let value = inputField.value.toUpperCase();
+            let responsive = document.querySelector('.responsive');
+            while(responsive.nextElementSibling){
+                let title = responsive.querySelector('.title');
+                let textValue = title.innerHTML;
+                if(textValue.toUpperCase().indexOf(value)>-1){
+                    responsive.style.display = "";
+                } else {
+                    responsive.style.display = "none";
+                }                
+                responsive = responsive.nextElementSibling;
+            }
+        }
+    </script>
 </html>
