@@ -193,18 +193,19 @@ section h2 ~ * {
     font-family: sans-serif;
 }
 
-section h2 ~ span, section h2 ~ span a {
+section h2 ~ span, section h2 ~ span a, .tablinks {
     font-weight: bold;
     color: grey;
     padding-right: 10px;
     text-decoration: none;
+    border: none;
 }
  
-section h2 ~ span a:hover {
+section h2 ~ span a:hover, .tablinks:hover {
     color: black;
 }
 
-#python {
+.python {
     color: black;
     font-weight: bold;
     border: 1px solid black;
@@ -247,4 +248,8 @@ section article p {
 .desc > p + p + p + p del {
     font-weight: normal;
     color: #777;
+}
+
+.tabcontent {
+    display: none;
 }

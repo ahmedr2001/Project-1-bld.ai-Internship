@@ -1,54 +1,108 @@
 {
-	"courses": [
-		{
-			"id": 1,
-			"title": "Learn Python: The Complete Python Programming Course",
-			"author": "Avinash Jain, The Codex",
-			"image": "images/py1.png",
-			"rating": 4.4,
-			"reviews": 2845,
-			"price": 199.99,
-			"previous": 679.99 
-		},
-		{
-			"id": 2,
-			"title": "Learning Python for Data Analysis and Visualization",
-			"author": "Jose Portilla",
-			"image": "images/py2.png",
-			"rating": 4.4,
-			"reviews": 17956,
-			"price": 269.99,
-			"previous": 1599.99
-		},
-		{
-			"id": 3,
-			"title": "Python for Beginners - Programming from scratch",
-			"author": "Edwin Diaz, Coding Faculty Solutions",
-			"image": "images/py3.png",
-			"rating": 4.4,
-			"reviews": 1734,
-			"price": 199.99,
-			"previous": 679.99
-		},
-		{
-			"id": 4,
-			"title": "Learn Python: Python for Beginners",
-			"author": "Abrar Hussain",
-			"image": "images/py4.png",
-			"rating": 4.2,
-			"reviews": 2759,
-			"price": 199.99,
-			"previous": 319.99
-		},
-		{
-			"id": 5,
-			"title": "Python Beyond the Basics - Object-Oriented Programming",
-			"author": "Infinite Skills",
-			"image": "images/py5.png",
-			"rating": 4.4,
-			"reviews": 2927,
-			"price": 229.99,
-			"previous": 519.99
-		}
-	]
+	
+		"python": 		[
+			{
+				"id": 1,
+				"title": "Learn Python: The Complete Python Programming Course",
+				"author": "Avinash Jain, The Codex",
+				"image": "images/py1.png",
+				"rating": 4.4,
+				"reviews": 2845,
+				"price": 199.99,
+				"previous": 679.99 
+			},
+			{
+				"id": 2,
+				"title": "Learning Python for Data Analysis and Visualization",
+				"author": "Jose Portilla",
+				"image": "images/py2.png",
+				"rating": 4.4,
+				"reviews": 17956,
+				"price": 269.99,
+				"previous": 1599.99
+			},
+			{
+				"id": 3,
+				"title": "Python for Beginners - Programming from scratch",
+				"author": "Edwin Diaz, Coding Faculty Solutions",
+				"image": "images/py3.png",
+				"rating": 4.4,
+				"reviews": 1734,
+				"price": 199.99,
+				"previous": 679.99
+			},
+			{
+				"id": 4,
+				"title": "Learn Python: Python for Beginners",
+				"author": "Abrar Hussain",
+				"image": "images/py4.png",
+				"rating": 4.2,
+				"reviews": 2759,
+				"price": 199.99,
+				"previous": 319.99
+			},
+			{
+				"id": 5,
+				"title": "Python Beyond the Basics - Object-Oriented Programming",
+				"author": "Infinite Skills",
+				"image": "images/py5.png",
+				"rating": 4.4,
+				"reviews": 2927,
+				"price": 229.99,
+				"previous": 519.99
+			}
+		],
+		"excel": [
+			{
+				"id": 6,
+				"title": "Microsoft Excel 2013 Course Beginner/Intermediate",
+				"author": "Infinite Skills",
+				"image": "images/excel1.png",
+				"rating": 4.6,
+				"reviews": 1621,
+				"price": 519.99,
+				"previous": 999.99 
+			},
+			{
+				"id": 7,
+				"title": "Microsoft Excel 2013 Advanced. Online Excel",
+				"author": "Infinite Skills",
+				"image": "images/excel2.png",
+				"rating": 4.5,
+				"reviews": 3503,
+				"price": 519.99,
+				"previous": 999.99 
+			},
+			{
+				"id": 8,
+				"title": "Microsoft Excel - From Beginner to Expert in 6 Hours",
+				"author": "Edwin Diaz, Coding Faculty Solutions",
+				"image": "images/excel3.png",
+				"rating": 4.4,
+				"reviews": 1793,
+				"price": 679.99,
+				"previous": 999.99
+			},
+			{
+				"id": 9,
+				"title": "Sharper skills using Microsoft Excel 2010 for business",
+				"author": "Abrar Hussain",
+				"image": "images/excel4.png",
+				"rating": 4.3,
+				"reviews": 2774,
+				"price": 319.99,
+				"previous": 999.99
+			},
+			{
+				"id": 10,
+				"title": "Learn Microsoft Excel 2013 - Advanced",
+				"author": "Simon Sez IT",
+				"image": "images/excel5.png",
+				"rating": 4.6,
+				"reviews": 372,
+				"price": 679.99,
+				"previous": 999.99
+			}
+		]
+	
 }
