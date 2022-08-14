@@ -3,16 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="C:/Users/ASUS/Desktop/Desktop/bld.ai internship/Project1/bootstrap/js/bootstrap.js"></script>
+        <link href="C:/Users/ASUS/Desktop/Desktop/bld.ai internship/Project1/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
         <script src="https://kit.fontawesome.com/a791d2f5a2.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <nav class="nav" style="height: 35px; position: sticky; top:0px; z-index: 10; background-color: white;">
             <span id="bar"><i class="fa fa-bars fa-2x"></i></span>
-            <img class="logo" style="max-height: 100%; display: inline;" src="images/udemylogo.png" alt="Udemy Logo">
+            <img class="logo" style="max-height: 100%; display: inline; padding-top: -10px !important;" src="images/udemylogo.png" alt="Udemy Logo">
             <span>Categories</span>
             <form onkeyup="searchFunction(event)" id="form" style="display: inline;" action="#" method="post">
-                <span id="search"><i style="position: absolute; padding-top: 25px; padding-left: 15px;" class="fa fa-search"></i></span>
+                <span id="search"><i style="position: absolute; padding-top: 19px; padding-left: 15px;" class="fa fa-search"></i></span>
                 <input id="input-field" class="input-field" style="width: 50%;" type="text" placeholder="Search for anything">
                 <button class="submit" type="submit">Search</button>
             </form>
@@ -31,6 +33,7 @@
         <section>
             <h2 style="font-size: 38px;">A broad selection of courses</h2>
             <p style="font-size: 20px">Choose from 185,000 online video courses with new additions published every month</p>
+            
             <span><a href="#">Python</a></span>
             <span><a href="#">Excel</a></span>
             <span><a href="#">Web Development</a></span>
@@ -48,6 +51,51 @@
                 <br>
             </article>
         </section>
+        <div class="container">
+            <div class="row">
+                <h3>Top categories</h3>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <figure><img src="images/design.png" alt="design"></figure>
+            <figcaption><strong>Design</strong></figcaption>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <figure><img src="images/development.png" alt="development"></figure>
+            <figcaption><strong>Development</strong></figcaption>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <figure><img src="images/marketing.png" alt="marketing"></figure>
+                <figcaption><strong>Marketing</strong></figcaption>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <figure><img src="images/it.png" alt="it"></figure>
+            <figcaption><strong>IT and Software</strong></figcaption>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <figure><img src="images/personal.png" alt="personal"></figure>
+            <figcaption><strong>Personal Development</strong></figcaption>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <figure><img src="images/business.png" alt="business"></figure>
+            <figcaption><strong>Business</strong></figcaption>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                
+            <figure><img src="images/photography.png" alt="photography"></figure>
+            <figcaption><strong>Photography</strong></figcaption>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                
+            <figure><img src="images/music.png" alt="music"></figure>
+            <figcaption><strong>Music</strong></figcaption>
+            </div>
+            
+        </div>
+        </div>
+            
+        
     </body>
     <script>
         async function fetchCourses(){
@@ -90,7 +138,7 @@
             clearfix.className = 'clearfix';
             article.appendChild(clearfix);
         }
-        
+
         window.addEventListener('load', fetchCourses);
 
         function searchFunction(event){
