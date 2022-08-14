@@ -90,13 +90,8 @@
             clearfix.className = 'clearfix';
             article.appendChild(clearfix);
         }
+        
         window.addEventListener('load', fetchCourses);
-
-        let form = document.querySelector('#form');
-
-        form.addEventListener('focus', (event) => {
-            event.preventDefault();
-        });
 
         function searchFunction(event){
             event.preventDefault();
